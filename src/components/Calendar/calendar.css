@@ -1,0 +1,280 @@
+.month-title {
+    display: flex;
+    flex-direction: row;
+    /* flex-grow: 1; */
+    justify-content: space-between;
+    /* align-content: center; */
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.month-title h1 {
+    flex: 3;
+    text-align: center;
+    /* flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 500px; */
+    white-space: nowrap;
+    margin: 0 20px;
+}
+
+.month-title button {
+    flex: 1;
+    flex-grow: 0;
+    /* width: 10px; */
+    /* display: inline-block; */
+    font-size: 4rem;
+    border: none;
+    margin-top: 0;
+    background-color: #ffffff;
+    color: #000000;
+    transition: color 300ms, transform 300ms;
+}
+
+.month-title button:hover {
+    color: #696969;
+    transform: scale(1.2);
+    transition: color 300ms, transform 300ms;
+}
+
+.day-name-row-wrapper {
+    margin: 10px 0 0 0;
+}
+
+.column-day-name-row {
+    color: white;
+    border: solid 1px;
+    border-color: #2e74b5;
+    font-size: medium;
+    font-weight: bolder;
+    margin: -1px 0 0 -1px;
+}
+
+.column-day-name-row-wrapper {
+    background-color: #2e74b5;
+    display: grid;
+    gap: 0px;
+    grid-auto-rows: minmax(auto, auto);
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+}
+
+.day-box-wrapper {
+    display: grid;
+    font-weight: 900;
+    gap: 0px;
+    grid-auto-rows: minmax(100px, auto);
+    grid-auto-columns: minmax(100px, auto);
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 100px);
+    margin-top: 0;
+}
+
+.day-box {
+    border: solid 1px;
+    border-color: gray;
+    color: black;
+    margin: -1px 0 0 -1px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    word-break: keep-all;
+    white-space: nowrap;
+}
+
+.day-number {
+    display: block;
+    margin: 0 0 0 2px;
+    text-align: center;
+    width: 17px;
+}
+
+.current-day {
+    background-color: #bcd3b3
+}
+
+.day-number-header {
+    margin: 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.reminder {
+    background-color: #2edfff;
+    border-radius: 6px;
+    display: block;
+    font-size: 10px;
+    font-weight: normal;
+    margin: 2px 2px 0 2px;
+    overflow-x: hidden;
+    padding-left: 2px;
+    transition: background-color 0.3s;
+}
+
+.reminder:hover {
+    background-color: #25a3b9;
+    transition: background-color 0.3s;
+}
+
+div.day-box::-webkit-scrollbar {
+    width: 0px;
+}
+
+/* Avoid text highlight */
+
+.no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.add-reminder-btn-container {
+    position: relative;
+}
+
+.add-reminder-btn {
+    position: absolute;
+    /* position: fixed; */
+    /* bottom: 40px; */
+    right: 0px;
+    width: 40px;
+    height: 40px;
+    border: 0px;
+    border-radius: 20px;
+    background-color: #2e74b5;
+    color: white;
+    font-size: 2em;
+    font-weight: bolder;
+    transition: background-color 0.3s;
+}
+
+.add-reminder-btn:hover {
+    background-color: #225788;
+    transition: background-color 0.3s;
+}
+
+.floating-window {
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    /* overflow: auto; */
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    backdrop-filter: blur(5px);
+    margin: 0;
+}
+
+.floating-window-content {
+    /* align-content: center; */
+    /* height: 330px; */
+    border-radius: 8px;
+    background-color: #fefefe;
+    margin: 10% auto 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 600px;
+}
+
+#reminder-form {
+    margin: 0;
+}
+
+#reminder-form label {
+    font-size: 1.3em;
+    display: block;
+}
+
+#reminder-form input {
+    border: 1px solid #2e74b5;
+    border-radius: 5px;
+    display: block;
+    font-size: 1em;
+    height: 2.5em;
+    margin: 0;
+    padding: 0 10px;
+    width: 100%;
+}
+
+#reminder-form button {
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 1.3em;
+    margin-right: 15px;
+    padding: 5px 15px;
+}
+
+.form-button-container {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.form-button {
+    background-color: #2e74b5;
+    transition: background-color 0.3s;
+}
+
+.form-button:hover {
+    background-color: #225788;
+    transition: background-color 0.3s;
+}
+
+.delete-button {
+    background-color: #ff0000;
+}
+
+.delete-button:hover {
+    background-color: #be0000;
+    transition: background-color 0.3s;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.form-container div {
+    margin: 0;
+}
+
+.form-col-1 {
+    flex: 4;
+}
+
+.form-col-2 {
+    flex: 3;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    height: 100%;
+}
+
+.form-date-time-block {
+    display: flex;
+    flex-direction: row;
+}
+
+.weather-icon {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 150px;
+}
+
+.weather-temperature span {
+    font-size: 1.5em;
+    display: block;
+    margin: 0;
+}
